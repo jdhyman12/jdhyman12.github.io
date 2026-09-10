@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Joshua Hyman — Personal projects and experiments.">
+<title>Personal Projects · Joshua Hyman</title>
+<style>
+:root{color-scheme:light;--bg:#fafafa;--surface:#fff;--text:#111;--muted:#666;--line:#dedede;--nav:rgba(250,250,250,.88)}
+[data-theme="dark"]{color-scheme:dark;--bg:#0d0d0d;--surface:#151515;--text:#f4f4f4;--muted:#a3a3a3;--line:#303030;--nav:rgba(13,13,13,.88)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65}
+a{color:inherit}.container{width:min(860px,90%);margin:auto}
+.topbar{position:sticky;top:0;z-index:20;background:var(--nav);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+.topbar-inner{display:flex;justify-content:space-between;align-items:center;min-height:62px}.brand{text-decoration:none;font-weight:750;letter-spacing:-.02em}
+nav{display:flex;align-items:center;gap:20px}nav a{text-decoration:none;font-size:.9rem;color:var(--muted)}nav a:hover{color:var(--text)}
+.theme{border:1px solid var(--line);background:var(--surface);color:var(--text);width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:1rem}
+.hero{padding:95px 0 70px;border-bottom:1px solid var(--line)}.kicker{font-size:.8rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:700}
+h1{font-size:clamp(3rem,8vw,5.5rem);line-height:.95;letter-spacing:-.07em;margin:20px 0 25px}.lead{font-size:clamp(1.05rem,2vw,1.25rem);max-width:680px;color:var(--muted);margin:0}
+section{padding:65px 0}.section-head{display:flex;justify-content:space-between;gap:20px;align-items:baseline;margin-bottom:30px}
+h2{font-size:1.5rem;letter-spacing:-.04em;margin:0}.section-number{font-size:.8rem;color:var(--muted)}
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.project{display:flex;flex-direction:column;min-height:100%;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden;text-decoration:none;transition:transform .18s ease,border-color .18s ease}
+.project:hover{transform:translateY(-3px);border-color:var(--text)}
+.thumb{aspect-ratio:16/9;background:var(--bg);display:flex;align-items:flex-end;padding:16px;color:var(--muted);font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;border-bottom:1px solid var(--line)}
+.thumb img{width:100%;height:100%;object-fit:cover;margin:-16px;display:block}
+.project-body{padding:20px 20px 22px}.project h3{margin:0;font-size:1.15rem;letter-spacing:-.025em}.meta{color:var(--muted);font-size:.85rem;margin-top:3px}
+.project p{margin:12px 0 0;color:var(--muted);font-size:.93rem}.arrow{margin-top:20px;font-size:.85rem;color:var(--text)}
+footer{padding:30px 0;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
+@media(max-width:700px){nav a{display:none}.hero{padding:75px 0 55px}section{padding:50px 0}.projects{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="container topbar-inner">
+<a class="brand" href="index.html">JH</a>
+<nav><a href="index.html">CV</a><a href="#projects">Projects</a><button class="theme" id="themeToggle" aria-label="Toggle dark mode">☾</button></nav>
+</div></div>
+
+<main>
+<header class="container hero">
+<div class="kicker">Personal Projects · Experiments</div>
+<h1>Things I’ve Built</h1>
+<p class="lead">A collection of projects, experiments and random things I have worked on out of interest. Mostly exploratory, and because I wanted to see if I could do them rather than anything conclusive.</p>
+</header>
+
+<section id="projects"><div class="container">
+<div class="section-head"><h2>Personal Projects</h2><span class="section-number">01</span></div>
+<div class="projects">
+
+<!-- Duplicate this block for each new project -->
+<a class="project" href="Projects/project_bananas_0825.html">
+<div href="thumb"><img src="Media/warhol_banana.avif" alt="Warhol banana"idth="100" height="100"></img></div>
+<div class="project-body"><h3>UK Banana Prices (2025)</h3><div class="meta">2025</div>
+<p>In a conversation on a random Friday afternoon, I started to wonder about the price of bananas. I found a dataset that afternoon and threw together a project on the price of bananas on the Saturday.</p><div class="arrow">View project →</div></div>
+</a>
+
+
+</div></div></section>
+</main>
+
+<footer><div class="container">© 2026 Joshua Hyman</div></footer>
+<script>
+const root=document.documentElement,button=document.getElementById("themeToggle"),saved=localStorage.getItem("theme");
+if(saved)root.setAttribute("data-theme",saved);
+function updateIcon(){button.textContent=root.getAttribute("data-theme")==="dark"?"☀":"☾"} updateIcon();
+button.addEventListener("click",()=>{const next=root.getAttribute("data-theme")==="dark"?"light":"dark";root.setAttribute("data-theme",next);localStorage.setItem("theme",next);updateIcon()});
+</script>
+</body>
+</html>
